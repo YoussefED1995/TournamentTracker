@@ -1,0 +1,23 @@
+<template>
+    <lightning-card title="Upcoming & Recents Matches">
+        <div class="slds-grid slds-wrap slds-p-around_medium">
+
+            <!-- Upcoming Matches Section -->
+            <div class="slds-col slds-size_1-of-1 slds-p-around_medium">
+                <template if:true={upcomingMatches.length}>
+                    <ul class="slds-list_dotted">
+                        <template for:each={upcomingMatches} for:item="match">
+                            <li key={match.id}>
+                                {match.homeTeam} vs {match.awayTeam}
+                                <span class="slds-text-title">({match.date})</span>
+                            </li>
+                        </template>
+                    </ul>
+                </template>
+                <template if:false={upcomingMatches.length}>
+                    <p>No upcoming matches available.</p>
+                </template>
+            </div>
+        </div>
+    </lightning-card>
+</template>

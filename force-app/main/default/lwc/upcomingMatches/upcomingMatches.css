@@ -1,0 +1,14 @@
+.slds-card {
+    margin: 1rem 0;
+}
+
+ul.slds-list_dotted {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+ul.slds-list_dotted li {
+    padding: 0.5rem 0;
+    border-bottom: 1px dotted #ddd;
+}

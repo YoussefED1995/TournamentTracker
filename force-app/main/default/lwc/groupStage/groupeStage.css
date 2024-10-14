@@ -1,0 +1,36 @@
+.tournament-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Four columns for the groups */
+    gap: 20px; /* Spacing between groups */
+    margin: 20px; /* Margin around the container */
+}
+
+.group {
+    border: 1px solid #ccc; /* Light border around each group */
+    padding: 10px; /* Padding within each group */
+    border-radius: 5px; /* Rounded corners */
+    background-color: #f9f9f9; /* Light background for groups */
+    text-align: center; /* Center the text */
+}
+
+.teams {
+    display: flex; /* Flexbox for the teams */
+    flex-direction: column; /* Arrange teams vertically */
+    align-items: center; /* Center the items horizontally */
+}
+
+.team {
+    display: flex; /* Flexbox for the team items */
+    align-items: center; /* Align items vertically centered */
+    margin: 5px 0; /* Space between teams */
+}
+
+.team-flag {
+    width: 30px; /* Fixed width for flags */
+    height: 20px; /* Fixed height for flags */
+    margin-right: 10px; /* Space between flag and name */
+}
+
+.team-name {
+    font-weight: bold; /* Bold team names */
+}

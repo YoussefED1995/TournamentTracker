@@ -1,0 +1,37 @@
+<template>
+    <div class="slds-table slds-table_cell-buffer slds-table_bordered slds-is-relative">
+        <table dir="rtl" class="slds-table slds-table_cell-buffer slds-table_bordered">
+            <tbody>
+                <tr>
+                    <td class="slds-text-align_center slds-text-heading_small" colspan="20">
+                        <span>نهائيات كأس العالم 2022 في قطر</span><br />نصف النهائي
+                    </td>
+                </tr>
+                <template for:each={matches} for:item="match">
+                    <tr key={match.id} class="leagueRow">
+                        <td class="slds-text-align_center" colspan="10">
+                            <a href={match.dateLink}>{match.date}</a>
+                        </td>
+                    </tr>
+                    <tr key={match.matchId}>
+                        <td class="slds-text-align_left">
+                            <a href={match.team1Link} style="color: red;">{match.team1}</a>
+                        </td>
+                        <td class="slds-text-align_center">
+                            <a href={match.scoreLink}>
+                                <font color="red">{match.score1}</font> : <font color="gray">{match.score2}</font>
+                            </a>
+                        </td>
+                        <td class="slds-text-align_left">
+                            <a href={match.team2Link} style="color: gray;">{match.team2}</a>
+                        </td>
+                        <td class="slds-text-align_left">
+                            <span style="color: darkgreen;">{match.stadium}</span><br />
+                            <font style="color: green;">{match.matchNumber}<br /></font>
+                        </td>
+                    </tr>
+                </template>
+            </tbody>
+        </table>
+    </div>
+</template>

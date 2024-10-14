@@ -1,0 +1,96 @@
+<template>
+    <div class="slds-grid slds-wrap slds-gutters">
+        <!-- Dashboard Section -->
+        <section class="slds-col slds-size_1-of-2 slds-p-around_medium">
+            <h2 class="slds-text-heading_small slds-p-bottom_small">Dashboard</h2>
+            <lightning-card title="Overview">
+                <div class="slds-var-m-around_medium">
+                    <ul class="slds-list_dotted slds-m-bottom_small">
+                        <li>Tournaments: <strong>{tournamentCount}</strong></li>
+                        <li>Teams: <strong>{teamCount}</strong></li>
+                        <li>Matches: <strong>{matchCount}</strong></li>
+                    </ul>
+                </div>
+            </lightning-card>
+        </section>
+
+        <!-- Recent Activity Section -->
+        <section class="slds-col slds-size_1-of-2 slds-p-around_medium">
+            <h2 class="slds-text-heading_small slds-p-bottom_small">Recent Activities</h2>
+            <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+                <thead>
+                    <tr class="slds-line-height_reset">
+                        <th scope="col">
+                            <div class="slds-truncate" title="Team Name">Team</div>
+                        </th>
+                        <th scope="col">
+                            <div class="slds-truncate" title="Matches Played">MP</div>
+                        </th>
+                        <th scope="col">
+                            <div class="slds-truncate" title="Wins">W</div>
+                        </th>
+                        <th scope="col">
+                            <div class="slds-truncate" title="Draws">D</div>
+                        </th>
+                        <th scope="col">
+                            <div class="slds-truncate" title="Losses">L</div>
+                        </th>
+                        <th scope="col">
+                            <div class="slds-truncate" title="Goals For">GF</div>
+                        </th>
+                        <th scope="col">
+                            <div class="slds-truncate" title="Goals Against">GA</div>
+                        </th>
+                        <th scope="col">
+                            <div class="slds-truncate" title="Goal Difference">GD</div>
+                        </th>
+                        <th scope="col">
+                            <div class="slds-truncate" title="Points">Pts</div>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <template for:each={groups} for:item="group">
+                        <tr key={group.groupName}>
+                            <td colspan="9" class="slds-text-align_center slds-p-around_small">
+                                <strong>{group.groupName}</strong>
+                            </td>
+                        </tr>
+                        <template for:each={group.teams} for:item="team">
+                            <tr key={team.id} style={styleColor}>
+                                <td data-label="Team">
+                                    <div class="slds-truncate" title={team.teamName}>{team.teamName}</div>
+                                </td>
+                                <td data-label="Matches Played">
+                                    <div class="slds-truncate" title={team.MP}>{team.MP}</div>
+                                </td>
+                                <td data-label="Wins">
+                                    <div class="slds-truncate" title={team.W}>{team.W}</div>
+                                </td>
+                                <td data-label="Draws">
+                                    <div class="slds-truncate" title={team.D}>{team.D}</div>
+                                </td>
+                                <td data-label="Losses">
+                                    <div class="slds-truncate" title={team.L}>{team.L}</div>
+                                </td>
+                                <td data-label="Goals For">
+                                    <div class="slds-truncate" title={team.GF}>{team.GF}</div>
+                                </td>
+                                <td data-label="Goals Against">
+                                    <div class="slds-truncate" title={team.GA}>{team.GA}</div>
+                                </td>
+                                <td data-label="Goal Difference">
+                                    <div class="slds-truncate" title={team.GD}>{team.GD}</div>
+                                </td>
+                                <td data-label="Points">
+                                    <div class="slds-truncate" title={team.Pts}>{team.Pts}</div>
+                                </td>
+                            </tr>
+                        </template>
+                    </template>
+                </tbody>
+            </table>
+        </section>
+    </div>
+
+</template>

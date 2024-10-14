@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata" fqn="teamStats">
+    <apiVersion>61.0</apiVersion> <!-- Ensure the correct API version -->
+    <isExposed>true</isExposed> <!-- This must be true to expose it in Lightning App Builder -->
+    <targets>
+        <target>lightning__AppPage</target>
+        <target>lightning__RecordPage</target>
+        <target>lightning__HomePage</target> <!-- Include the desired targets -->
+    </targets>
+</LightningComponentBundle>

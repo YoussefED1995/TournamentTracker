@@ -1,0 +1,28 @@
+<template>
+    <lightning-card title="Knockout Stage Matches" icon-name="custom:custom63">
+        <template for:each={knockoutMatches} for:item="match">
+            <div key={match.id} class="arbre-match-container slds-p-around_small slds-border slds-border_bottom slds-border_top">
+                <div class="slds-grid slds-grid_vertical-align-center">
+                    <div class="slds-col slds-size_small slds-text-title_caps">{match.round}</div>
+                    <div class="slds-col slds-size_small slds-text-body_regular">{match.date}</div>
+                    <div class="slds-col slds-size_auto">
+                        <div class="slds-grid slds-grid_align-center">
+                            <span class="team-logo-container">
+                                <img src={match.homeTeamLogo} alt={match.homeTeam} class="team-logo" />
+                                <span class="slds-text-title_caps">{match.homeTeam}</span>
+                            </span>
+                            <span class="slds-text-body_regular slds-p-horizontal_small">vs</span>
+                            <span class="team-logo-container">
+                                <img src={match.awayTeamLogo} alt={match.awayTeam} class="team-logo" />
+                                <span class="slds-text-title_caps">{match.awayTeam}</span>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="slds-col slds-size_small">
+                        <a href={match.matchLink} class="slds-button slds-button_neutral">View Match</a>
+                    </div>
+                </div>
+            </div>
+        </template>
+    </lightning-card>
+</template>

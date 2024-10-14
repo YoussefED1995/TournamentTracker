@@ -1,0 +1,51 @@
+<template>
+    <div class="slds-text-heading_medium">Group Stage</div>
+
+    <div class="slds-grid slds-wrap slds-gutters">
+        <template for:each={groupData} for:item="group">
+            <div key={group.groupName} class="slds-col slds-size_1-of-4 slds-p-around_small">
+                <div class="slds-card">
+                    <div class="slds-card__header slds-grid">
+                        <header class="slds-media slds-media_center slds-has-flexi-truncate">
+                            <div class="slds-media__body">
+                                <h2 class="slds-card__header-title slds-text-align_center">
+                                    <span>{group.groupName}</span>
+                                </h2>
+                            </div>
+                        </header>
+                    </div>
+                    <div class="slds-card__body slds-card__body_inner">
+                        <div class="slds-table_edit_container">
+                            <table class="slds-table slds-table_bordered slds-table_striped">
+                                <thead>
+                                    <tr class="slds-text-heading_small">
+                                        <th scope="col">Team</th>
+                                        <th scope="col">P</th>
+                                        <th scope="col">W</th>
+                                        <th scope="col">D</th>
+                                        <th scope="col">L</th>
+                                        <th scope="col">Pts</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <template for:each={group.teams} for:item="team">
+                                        <tr key={team.id} class="slds-hint-parent">
+                                            <td>{team.name}</td>
+                                            <td>{team.matchPlayed}</td>
+                                            <td>{team.wins}</td>
+                                            <td>{team.draws}</td>
+                                            <td>{team.losses}</td>
+                                            <td>{team.points}
+                                                <lightning-icon icon-name="utility:activity" alternative-text="activity" size="small"></lightning-icon>
+                                            </td>
+                                        </tr>
+                                    </template>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </template>
+    </div>
+</template>
