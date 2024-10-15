@@ -113,7 +113,6 @@ global class TournamentDataGenerator implements Database.Batchable<SObject>, Dat
         
             // Check for semi-finals to add third place match
             if (roundIndex == 2) { // Semi-finals
-                // Assuming the last two teams in qualifiedTeams are the losing semi-finalists
                 Id thirdPlaceHomeId = qualifiedTeams[2].Id; // 3rd place team
                 Id thirdPlaceAwayId = qualifiedTeams[3].Id; // 4th place team
                 
